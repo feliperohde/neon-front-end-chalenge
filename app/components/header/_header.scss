@@ -1,0 +1,33 @@
+
+.header {
+  margin: $gutter 0;
+  display: flex;
+  height: remify(30px);
+
+  > .wrapper {
+    display: inherit;
+  }
+}
+
+.header__logo {
+  width: 0;
+  display: inherit;
+  align-itens: center;
+}
+
+.header__resume {
+  align-items: center;
+  justify-content: center;
+  display: inherit;
+  width: 100%;
+}
+
+.header__label {
+  font-weight: bolder;
+  text-transform: lowercase;
+  font-size: remify(20px)
+}
+
+.header__cipher {
+  display: none;
+}

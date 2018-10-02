@@ -1,6 +1,8 @@
+@import "mixins";
+@import "variables";
+
 /* UTILS
 ------------------------------------------------------------------------*/
-
 .pseudo {
   content: " ";
   font-size: 0;
@@ -11,5 +13,32 @@
   &:before, &:after{
     @extend .pseudo;
     clear: both;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  max-width: $desk-bk;
+
+  padding: 0 $gutter;
+}
+
+
+/* HIDE*/
+.hide--desktop {
+  @include above($desk-bk) {
+    display: none;
+  }
+}
+
+.hide--tablet {
+  @include above($tabl-bk) {
+    display: none;
+  }
+}
+
+.hide--mobile {
+  @include below($tabl-bk) {
+    display: none;
   }
 }
