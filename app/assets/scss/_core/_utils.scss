@@ -1,0 +1,15 @@
+/* UTILS
+------------------------------------------------------------------------*/
+
+.pseudo {
+  content: " ";
+  font-size: 0;
+  display: block;
+}
+
+.clear {
+  &:before, &:after{
+    @extend .pseudo;
+    clear: both;
+  }
+}

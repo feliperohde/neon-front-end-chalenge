@@ -1,0 +1,25 @@
+/* MIXINS
+------------------------------------------------------------------------*/
+
+@mixin above($bk) {
+  @media only screen and (min-width: #{$bk}) {
+    @content;
+  }
+}
+
+@mixin below($bk) {
+  @media only screen and (max-width: #{$bk}) {
+    @content;
+  }
+}
+
+@function remify($value) {
+  $u: unit($value);
+
+  @if $u == 'px' {
+      @return ((($value / ($value * 0 + 1)) * 1rem) / 16);
+  } @else {
+      @return ((($value / ($value * 0 + 1))) / 16) + $u;
+  }
+
+}
