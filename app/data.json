@@ -1,21 +1,4 @@
 {
-  "animals": [{
-    "category": "cat",
-    "categoryUILabel": "Categoria",
-    "type": "dog",
-    "sound": "woof"
-  }, {
-    "type": "cat",
-    "category": "cat",
-    "categoryUILabel": "Categoria",
-    "sound": "meow"
-  }, {
-    "type": "cow",
-    "category": "cat",
-    "categoryUILabel": "Categoria",
-    "sound": "moo"
-  }],
-
   "account": {
     "balance": 120202939,
     "currency": "real",
