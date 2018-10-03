@@ -34,7 +34,9 @@ $iconSize: remify(36px);
 
 .extract__currency {}
 
-.extract__value {}
+.extract__value {
+  margin-left: ($gutter / 4)
+}
 
 .extract__options {
   position: absolute;
@@ -71,3 +73,13 @@ $iconSize: remify(36px);
 }
 
 .extract__exlude {}
+
+/* MODIFIERS */
+.receivedPayment .extract__cipher {
+  color: $c-peaceGreen;
+
+  .extract__value:before {
+    content: "+";
+    display: inline-block;
+  }
+}

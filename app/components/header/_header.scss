@@ -28,6 +28,23 @@
   font-size: remify(20px)
 }
 
+.header__currency {
+  text-transform: uppercase;
+
+  margin-left: ($gutter / 4)
+}
+
 .header__cipher {
   display: none;
+
+  font-weight: bolder;
+  text-transform: lowercase;
+  font-size: remify(20px)
+}
+
+/* For desktop + */
+@include above($desk-bk) {
+  .header__cipher {
+    display: inline-block;
+  }
 }

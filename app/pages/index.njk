@@ -38,7 +38,7 @@
               <ul class="extract balance__extract">
 
                 {% for item in extract.items %}
-                <li class="extract__item">
+                <li class="extract__item {{item.type}}">
                   <div class="extract__label"><span>{{item.categoryUILabel}}</span></div>
                   <div class="extract__type">{{item.typeUILabel}}</div>
                   <div class="extract__cipher"><span class="extract__currency">{{account.currencyUILabel}}</span><span class="extract__value">{{item.value}}</span></div>

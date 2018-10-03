@@ -62,6 +62,8 @@ $scrollHeigth: remify(15px);
 
     height: 1px;
     background-color: $c-neonBrightGreen;
+
+    animation: robot 2s linear infinite alternate;
   }
 }
 
@@ -124,4 +126,12 @@ $scrollHeigth: remify(15px);
   .balance__year:after {
     background-color: $c-alienGreen;
   }
+}
+
+/* ANIMATIONS */
+
+@keyframes robot {
+    0% { background-color: $c-neonBrightGreen; }
+    0% { background-color: $c-yellow; }
+    100% { background-color: $c-alienGreen; }
 }
