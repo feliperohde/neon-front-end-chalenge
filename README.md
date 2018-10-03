@@ -33,6 +33,12 @@ $ gulp styles
 Compiles sass to css.
 
 ```
+$ gulp babel
+```
+
+Browserify js source files.
+
+```
 $ gulp lint
 ```
 
