@@ -1,3 +1,5 @@
+$controlsHeight: remify(45px);
+
 .carousel {
   white-space: nowrap;
   font-size: 0;
@@ -7,7 +9,11 @@
   // margin: 0 -($gutter);
 
   position: relative;
-  height: 100%;
+  height: calc(100%);
+
+  padding-bottom: $controlsHeight;
+
+  transition: filter 300ms linear;
 
   &.apply-blur .carousel__item {
     filter: url('#blur');
@@ -43,6 +49,41 @@
     padding-bottom: $gutter;
     overflow: auto;
   }
+}
+
+.carouselControl {
+  height: $controlsHeight;
+  width: 100%;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  text-align: center;
+}
+
+.carouselControl__item {
+  display: inline-block;
+
+  &.is-current .carouselControl__link {
+    opacity: 1;
+  }
+}
+
+.carouselControl__link {
+  font-size: 0;
+
+  display: block;
+  height: 18px;
+  width: 18px;
+
+  border-radius: ($gutter / 4);
+  border: solid 1px $c-neonCyan;
+  opacity: .5;
+
+  transition: opacity 240ms linear;
+
 }
 
 /* For desktop + */

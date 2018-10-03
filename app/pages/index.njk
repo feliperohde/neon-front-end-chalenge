@@ -30,9 +30,8 @@
   <section class="balance__body">
     <div class="balance__content">
       <ul class="carousel balance__carousel">
-
-
         {% for extract in account.extracts %}
+
         <li class="carousel__item">
           <div class="carousel__content">
             <div class="wrapper">
@@ -48,18 +47,22 @@
                     <button class="extract__exlude"><i class="fas fa-trash"></i><span>Excluir</span></button>
                     <button class="extract__configure"><span>Configurar</span></button>
                   </div>
-
                 </li>
                 {% endfor %}
-
               </ul>
+
             </div>
-
           </div>
+        </li>
 
+        {% endfor %}
+      </ul>
+      <ul class="carouselControl">
+        {% for extract in account.extracts %}
+        <li class="carouselControl__item">
+          <a href="" class="carouselControl__link">ver item</a>
         </li>
         {% endfor %}
-
       </ul>
     </div>
   </section>

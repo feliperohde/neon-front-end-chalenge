@@ -10,7 +10,9 @@ export default class Carousel {
 
     const defaults = {
       carousel: ".carousel",
-      carouselItem: ".carousel__item"
+      carouselItem: ".carousel__item",
+      carouselControl: ".carouselControl__item",
+      currentClass: "is-current"
     }
 
     this.options = {...defaults, ...options};
@@ -33,11 +35,19 @@ export default class Carousel {
 
     console.log(this);
     this.snap();
+    this.listemControls();
+  }
+
+  setCurrent(index) {
+    this.removeSiblingsClass();
+    this.$(this.options.carouselControl)[index].classList.toggle(this.options.currentClass)
   }
 
   goTo(item) {
 
     if(this.$(this.options.carouselItem)[item]){
+
+      this.setCurrent(item);
 
       if(this.options.blurFilter) {
         this.$(this.options.carousel)[0].classList.add('apply-blur');
@@ -52,10 +62,29 @@ export default class Carousel {
 
         setTimeout(function() {
           this.$(this.options.carousel)[0].classList.remove('apply-blur');
-        }.bind(this), 150);
+        }.bind(this), 100);
 
       }.bind(this));
 
+    }
+  }
+
+  listemControls() {
+    for (var i = this.$(this.options.carouselControl).length - 1; i >= 0; i--) {
+      let elem = this.$(this.options.carouselControl)[i];
+      elem.addEventListener('click', function (evt) {
+        evt.preventDefault();
+        let index = Array.from(elem.parentElement.children).indexOf(elem)
+        this.goTo(index);
+
+      }.bind(this))
+    }
+  }
+
+  removeSiblingsClass() {
+    for (var i = this.$(this.options.carouselControl).length - 1; i >= 0; i--) {
+      let elem = this.$(this.options.carouselControl)[i];
+      elem.classList.remove(this.options.currentClass);
     }
   }
 
