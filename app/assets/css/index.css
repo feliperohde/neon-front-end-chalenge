@@ -148,7 +148,8 @@ body {
   height: "0.29688rem"; }
   .balance__header > .wrapper {
     position: relative;
-    overflow: hidden; }
+    overflow: hidden;
+    max-width: 30.5rem; }
     .balance__header > .wrapper:before, .balance__header > .wrapper:after {
       position: absolute;
       z-index: 10;
@@ -207,8 +208,7 @@ body {
 /* For desktop + */
 @media only screen and (min-width: 61.25rem) {
   .balance__content {
-    height: calc(100% + 0.9375rem);
-    padding-bottom: 0.9375rem; } }
+    height: calc(100% + 0.9375rem); } }
 
 .carousel {
   white-space: nowrap;
@@ -223,17 +223,27 @@ body {
   font-size: 1rem;
   display: inline-block;
   width: 100%;
-  max-width: 30rem;
-  height: 100%;
-  overflow: hidden;
-  background-color: #28b0da;
-  border-radius: 0.625rem; }
+  height: 100%; }
   .carousel__item + .carousel__item {
     margin-left: 0.625rem; }
-  .carousel__item > .wrapper {
+
+.carousel__content {
+  background-color: #28b0da;
+  height: 100%;
+  overflow: auto;
+  border-radius: 0.625rem;
+  overflow: hidden;
+  max-width: 30rem; }
+  .carousel__content > .wrapper {
     height: 100%;
-    overflow: auto;
-    padding-top: 1.25rem; }
+    padding-top: 1.25rem;
+    overflow: auto; }
+
+/* For desktop + */
+@media only screen and (min-width: 61.25rem) {
+  .carousel__content {
+    width: 100%;
+    margin: 0 auto; } }
 
 .extract {
   position: relative; }
@@ -273,7 +283,8 @@ body {
   border: 0;
   background: none;
   font-size: 0;
-  color: white; }
+  color: white;
+  cursor: pointer; }
   .extract__exlude > .fas,
   .extract__configure > .fas {
     font-size: 1.25rem; }

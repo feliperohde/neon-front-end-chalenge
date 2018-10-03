@@ -59,9 +59,10 @@ $iconSize: remify(36px);
   font-size: 0;
   color: white;
 
+  cursor: pointer;
+
   > .fas {
     font-size: remify(20px);
-
   }
 }
 
@@ -69,8 +70,4 @@ $iconSize: remify(36px);
   display: none;
 }
 
-.extract__exlude {
-  // background-image: url("../img/icon-delete.png");
-  // background-repeat: no-repeat;
-  // background-size: cover;
-}
+.extract__exlude {}

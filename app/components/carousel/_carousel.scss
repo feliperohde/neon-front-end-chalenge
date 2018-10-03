@@ -16,22 +16,35 @@
 
   display: inline-block;
   width: 100%;
-  max-width: remify(480px);
-  height: 100%;
-  overflow: hidden;
 
-  background-color: $c-neonCyan;
-  border-radius: ($gutter / 2);
+  height: 100%;
 
   + .carousel__item {
     margin-left: ($gutter / 2);
   }
+}
+
+.carousel__content {
+  background-color: $c-neonCyan;
+  height: 100%;
+  overflow: auto;
+
+  border-radius: ($gutter / 2);
+  overflow: hidden;
+
+  max-width: remify(480px);
 
   > .wrapper {
     height: 100%;
-    overflow: auto;
-
     padding-top: $gutter;
+    overflow: auto;
+  }
+}
 
+/* For desktop + */
+@include above($desk-bk) {
+  .carousel__content {
+    width: 100%;
+    margin: 0 auto;
   }
 }

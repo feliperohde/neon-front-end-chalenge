@@ -34,25 +34,27 @@
 
         {% for extract in account.extracts %}
         <li class="carousel__item">
+          <div class="carousel__content">
+            <div class="wrapper">
+              <ul class="extract balance__extract">
 
-          <div class="wrapper">
-            <ul class="extract balance__extract">
+                {% for item in extract.items %}
+                <li class="extract__item">
+                  <div class="extract__label"><span>{{item.categoryUILabel}}</span></div>
+                  <div class="extract__type">{{item.typeUILabel}}</div>
+                  <div class="extract__cipher"><span class="extract__currency">{{account.currencyUILabel}}</span><span class="extract__value">{{item.value}}</span></div>
 
-              {% for item in extract.items %}
-              <li class="extract__item">
-                <div class="extract__label"><span>{{item.categoryUILabel}}</span></div>
-                <div class="extract__type">{{item.typeUILabel}}</div>
-                <div class="extract__cipher"><span class="extract__currency">{{account.currencyUILabel}}</span><span class="extract__value">{{item.value}}</span></div>
+                  <div class="extract__options">
+                    <button class="extract__exlude"><i class="fas fa-trash"></i><span>Excluir</span></button>
+                    <button class="extract__configure"><span>Configurar</span></button>
+                  </div>
 
-                <div class="extract__options">
-                  <button class="extract__exlude"><i class="fas fa-trash"></i><span>Excluir</span></button>
-                  <button class="extract__configure"><span>Configurar</span></button>
-                </div>
+                </li>
+                {% endfor %}
 
-              </li>
-              {% endfor %}
+              </ul>
+            </div>
 
-            </ul>
           </div>
 
         </li>

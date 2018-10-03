@@ -20,6 +20,7 @@ $scrollHeigth: remify(15px);
   > .wrapper {
     position: relative;
     overflow: hidden;
+    max-width: remify(488px);
 
     &:before,
     &:after {
@@ -116,11 +117,8 @@ $scrollHeigth: remify(15px);
 
 
 /* For desktop + */
-
 @include above($desk-bk) {
   .balance__content {
     height: calc(100% + #{$scrollHeigth}); // 15px is the scroll size
-    padding-bottom: $scrollHeigth;
   }
-
 }
