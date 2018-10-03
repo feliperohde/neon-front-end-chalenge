@@ -43,7 +43,7 @@ export default class Carousel {
       let scroll = item * this.itemWidth + (parseInt(this.itensMarginLeft,10) * item);
 
       this.isAnimating = true;
-      this.scrollTo(element, scroll, 800, function(){
+      this.scrollTo(element, scroll, 300, function(){
         this.isAnimating =  false;
       }.bind(this));
 
@@ -66,6 +66,8 @@ export default class Carousel {
         this.endCall = false;
       } else {
         this.endCall = true;
+
+        this.setBlur("0,0");
       }
     }.bind(this), 700);
 
@@ -109,11 +111,10 @@ export default class Carousel {
   //b = start value
   //c = change in value
   //d = duration
-  easeInOutQuad(t, b, c, d) {
-    t /= d/2;
-    if (t < 1) return c/2*t*t + b;
-    t--;
-    return -c/2 * (t*(t-2) - 1) + b;
+  //https://easings.net/
+  //https://github.com/danro/jquery-easing/blob/master/jquery.easing.js
+  easeInOutCubic(t, b, c, d) {
+    return c*((t=t/d-1)*t*t + 1) + b;
   }
 
   scrollTo(element, to, duration, callback) {
@@ -124,7 +125,7 @@ export default class Carousel {
 
     var animateScroll = function(){
         currentTime += increment;
-        var val = this.easeInOutQuad(currentTime, start, change, duration);
+        var val = this.easeInOutCubic(currentTime, start, change, duration);
         element.scrollLeft = val;
         if(currentTime < duration) {
             setTimeout(animateScroll, increment);
