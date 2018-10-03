@@ -19,6 +19,8 @@
 
   height: 100%;
 
+  filter: url('#blur');
+
   + .carousel__item {
     margin-left: ($gutter / 2);
   }

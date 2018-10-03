@@ -25,6 +25,12 @@ export default class Carousel {
     this.endCall = false;
     this.isAnimating = false;
 
+    if(options.blurFilter) {
+      this.options.blurFilter = this.$(this.options.blurFilter)[0];
+      this.lastPos = 0;
+      this.updateBlur();
+    }
+
     console.log(this);
     this.snap();
   }
@@ -47,6 +53,8 @@ export default class Carousel {
   snap() {
 
     let throttled = new Throttle(function() {
+      // if(this.options.blurFilter)
+      //   this.updateBlur();
       this.snapTo = Math.round(this.$(this.options.carousel)[0].scrollLeft / this.itemWidth);
     }.bind(this), 50);
 
@@ -78,6 +86,25 @@ export default class Carousel {
 
   }
 
+  setBlur(v) {
+    this.options.blurFilter.setAttribute("stdDeviation", v);
+  }
+
+  getPos() {
+    return this.$(this.options.carousel)[0].scrollLeft;
+  }
+
+  updateBlur() {
+    var pos = this.getPos();
+    var limit = 20;
+    var dx = Math.min(limit, Math.abs(this.lastPos - pos) * 0.5);
+    // var dy = Math.min(limit, 0);
+    this.setBlur(dx + "," + 0);
+
+    this.lastPos = pos;
+    // requestAnimationFrame(this.updateBlur());
+  }
+
   //t = current time
   //b = start value
   //c = change in value
@@ -101,6 +128,8 @@ export default class Carousel {
         element.scrollLeft = val;
         if(currentTime < duration) {
             setTimeout(animateScroll, increment);
+            if(this.options.blurFilter)
+              this.updateBlur();
         } else {
           callback();
         }
