@@ -1,8 +1,12 @@
 // Main javascript entry point
 // Should handle bootstrapping/starting application
 
-import Caroucel from '../../components/carousel/carousel';
+import Carousel from '../../components/carousel/carousel';
 
 document.addEventListener("DOMContentLoaded", () => {
+
+  var neonExtractCarousel = new Carousel();
+
+  neonExtractCarousel.goTo(1);
 
 });

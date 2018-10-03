@@ -121,4 +121,8 @@ $scrollHeigth: remify(15px);
   .balance__content {
     height: calc(100% + #{$scrollHeigth}); // 15px is the scroll size
   }
+
+  .balance__year:after {
+    background-color: $c-alienGreen;
+  }
 }

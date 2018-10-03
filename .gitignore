@@ -2,3 +2,7 @@ Icon
 .DS_Store
 /node_modules/*
 /app/*.html
+/app/assets/css/*.css
+/app/assets/css/*.map
+/app/assets/js/*.js
+/app/assets/js/*.map
