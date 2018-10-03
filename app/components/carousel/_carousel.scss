@@ -16,15 +16,22 @@
 
   display: inline-block;
   width: 100%;
+  max-width: remify(480px);
   height: 100%;
-  overflow: auto;
-
-  padding-top: $gutter;
+  overflow: hidden;
 
   background-color: $c-neonCyan;
   border-radius: ($gutter / 2);
 
   + .carousel__item {
     margin-left: ($gutter / 2);
+  }
+
+  > .wrapper {
+    height: 100%;
+    overflow: auto;
+
+    padding-top: $gutter;
+
   }
 }

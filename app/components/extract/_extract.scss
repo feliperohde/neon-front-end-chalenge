@@ -1,0 +1,76 @@
+$leftGutterItemOption: remify(48px);
+$iconSize: remify(36px);
+
+.extract {
+  position: relative;
+}
+
+.extract__item {
+  position: relative;
+
+  padding: ($gutter / 2) ($gutter);
+  padding-right: $leftGutterItemOption;
+  margin-left: -($gutter);
+  margin-right: -($gutter);
+
+  border-bottom: solid 1px rgba(255,255,255, .2);
+}
+
+.extract__label {
+  font-size: remify(16px);
+  font-weight: bolder;
+
+  + .extract__type {
+    margin-top: ($gutter / 2);
+  }
+}
+
+.extract__type {}
+
+.extract__cipher {
+  font-size: remify(18px);
+  font-weight: bolder;
+}
+
+.extract__currency {}
+
+.extract__value {}
+
+.extract__options {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0;
+}
+
+.extract__exlude,
+.extract__configure {
+  position: absolute;
+  right: ($gutter / 2);
+
+  width: $iconSize;
+  height: $iconSize;
+
+  -webkit-appearance: none;
+  border: 0;
+  background: none;
+
+  font-size: 0;
+  color: white;
+
+  > .fas {
+    font-size: remify(20px);
+
+  }
+}
+
+.extract__configure {
+  display: none;
+}
+
+.extract__exlude {
+  // background-image: url("../img/icon-delete.png");
+  // background-repeat: no-repeat;
+  // background-size: cover;
+}

@@ -5,7 +5,7 @@
 <header class="header" role="banner">
   <div class="wrapper">
     <a href="https://www.neon.com.br/" class="logo header__logo" target="_blank">
-      <img src="./assets/img/neon-logo-01.png" alt="" class="logo__img hide--desktop">
+      <img src="./assets/img/neon-logo-01.png" alt="" class="logo__img hide--desktop hide--tablet">
       <img src="./assets/img/neon-logo-02.png" alt="" class="logo__img hide--mobile">
     </a>
 
@@ -31,6 +31,7 @@
     <div class="balance__content">
       <ul class="carousel balance__carousel">
 
+
         {% for extract in account.extracts %}
         <li class="carousel__item">
 
@@ -44,7 +45,7 @@
                 <div class="extract__cipher"><span class="extract__currency">{{account.currencyUILabel}}</span><span class="extract__value">{{item.value}}</span></div>
 
                 <div class="extract__options">
-                  <button class="extract__exlude"><span>Excluir</span></button>
+                  <button class="extract__exlude"><i class="fas fa-trash"></i><span>Excluir</span></button>
                   <button class="extract__configure"><span>Configurar</span></button>
                 </div>
 

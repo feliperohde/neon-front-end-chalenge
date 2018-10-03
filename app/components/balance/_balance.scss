@@ -1,12 +1,14 @@
 $headerHeight: remify(76px);
 $topBarHeight: remify(90px);
+$scrollHeigth: remify(15px);
 
 .balance {
   position: absolute;
-  margin: $gutter auto;
+  bottom: 0;
 
   height: calc(100% - #{$topBarHeight});
-  bottom: 0;
+  width: 100%;
+  margin: $gutter auto;
 }
 
 .balance__header {
@@ -15,28 +17,29 @@ $topBarHeight: remify(90px);
   height: remify($headerHeight);
 
   //balance__year helper
-  position: relative;
-  overflow: hidden;
+  > .wrapper {
+    position: relative;
+    overflow: hidden;
 
-  &:before,
-  &:after {
-    @extend .pseudo;
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    bottom: 0;
+    &:before,
+    &:after {
+      @extend .pseudo;
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      bottom: 0;
 
-    box-shadow: 0 0 90px 90px $c-neonDarkBlue;
+      box-shadow: 0 0 90px 90px $c-neonDarkBlue;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    &:after {
+      right: 0;
+    }
   }
-
-  &:before {
-    left: 0;
-  }
-
-  &:after {
-    right: 0;
-  }
-
 }
 
 .balance__year {
@@ -73,11 +76,14 @@ $topBarHeight: remify(90px);
 }
 
 .balance__body {
+  padding-top: ($gutter / 2);
+
   position: relative;
   bottom: 0;
 
   width: 100%;
   height: calc(100% - #{$headerHeight});
+  overflow: hidden;
 }
 
 .balance__content {
@@ -103,6 +109,18 @@ $topBarHeight: remify(90px);
   }
 }
 
-.balance__carousel {}
+.balance__carousel {
+}
 
 .balance__extract {}
+
+
+/* For desktop + */
+
+@include above($desk-bk) {
+  .balance__content {
+    height: calc(100% + #{$scrollHeigth}); // 15px is the scroll size
+    padding-bottom: $scrollHeigth;
+  }
+
+}
