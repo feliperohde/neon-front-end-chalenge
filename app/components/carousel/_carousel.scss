@@ -8,6 +8,10 @@
 
   position: relative;
   height: 100%;
+
+  &.apply-blur .carousel__item {
+    filter: url('#blur');
+  }
 }
 
 .carousel__item {
@@ -18,8 +22,6 @@
   width: 100%;
 
   height: 100%;
-
-  filter: url('#blur');
 
   + .carousel__item {
     margin-left: ($gutter / 2);

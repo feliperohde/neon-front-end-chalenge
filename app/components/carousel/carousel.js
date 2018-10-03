@@ -39,12 +39,21 @@ export default class Carousel {
 
     if(this.$(this.options.carouselItem)[item]){
 
+      if(this.options.blurFilter) {
+        this.$(this.options.carousel)[0].classList.add('apply-blur');
+      }
+
       let element = this.$(this.options.carousel)[0];
       let scroll = item * this.itemWidth + (parseInt(this.itensMarginLeft,10) * item);
 
       this.isAnimating = true;
       this.scrollTo(element, scroll, 300, function(){
         this.isAnimating =  false;
+
+        setTimeout(function() {
+          this.$(this.options.carousel)[0].classList.remove('apply-blur');
+        }.bind(this), 150);
+
       }.bind(this));
 
     }
