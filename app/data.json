@@ -3,8 +3,95 @@
     "balance": 120202939,
     "currency": "real",
     "currencyUILabel": "R$",
-    "extractYear": 2017,
+    "extractYear": 2020,
     "extracts": [{
+      "month": "jan",
+      "items": [{
+        "uid": "NN1020",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "buy",
+        "typeUILabel": "Sua compra aparece aqui",
+        "value": 1000000
+      }, {
+        "uid": "NN1021",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "receivedPayment",
+        "typeUILabel": "Receba pagamentos",
+        "value": 20192838
+      }, {
+        "uid": "NN1022",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }, {
+        "uid": "NN1022",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }, {
+        "uid": "NN1023",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }, {
+        "uid": "NN1024",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }, {
+        "uid": "NN1025",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }, {
+        "uid": "NN1026",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }, {
+        "uid": "NN1027",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }, {
+        "uid": "NN1028",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }, {
+        "uid": "NN1029",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }, {
+        "uid": "NN1030",
+        "category": "cat",
+        "categoryUILabel": "Categoria",
+        "type": "tarif",
+        "typeUILabel": "Tafifa",
+        "value": 20102
+      }]
+    },{
       "month": "jan",
       "items": [{
         "uid": "NN1020",

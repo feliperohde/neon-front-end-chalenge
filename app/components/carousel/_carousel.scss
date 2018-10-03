@@ -29,7 +29,6 @@
 .carousel__content {
   background-color: $c-neonCyan;
   height: 100%;
-  overflow: auto;
 
   border-radius: ($gutter / 2);
   overflow: hidden;
@@ -39,6 +38,7 @@
   > .wrapper {
     height: 100%;
     padding-top: $gutter;
+    padding-bottom: $gutter;
     overflow: auto;
   }
 }

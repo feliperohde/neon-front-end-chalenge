@@ -77,6 +77,7 @@ export default class Carousel {
     this.$(this.options.carousel)[0].addEventListener('touchstart', function() {
       this.hasTouched = true;
     });
+
     this.$(this.options.carousel)[0].addEventListener('ontouchmove', function() {
       this.hasTouched = true;
     });
