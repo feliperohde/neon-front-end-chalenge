@@ -143,7 +143,7 @@ gulp.task("concat-js", () =>
 );
 
 // Gulp tasks
-gulp.task("watch", ["browser-sync"], () => {
+gulp.task("watch", ["browser-sync", "njk", "babel"], () => {
   // Watch sass files
   gulp.watch(["./app/assets/scss/**/*.scss", "./app/components/**/*.scss"], ["styles", reload]);
 

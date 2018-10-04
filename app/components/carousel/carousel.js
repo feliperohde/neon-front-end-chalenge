@@ -114,16 +114,16 @@ export default class Carousel {
 
     this.$(this.options.carousel)[0].addEventListener('touchstart', function() {
       this.hasTouched = true;
-    });
+    }.bind(this));
 
     this.$(this.options.carousel)[0].addEventListener('ontouchmove', function() {
       this.hasTouched = true;
-    });
+    }.bind(this));
 
     this.$(this.options.carousel)[0].addEventListener('touchend', function() {
       this.hasTouched = false;
       if(self.endCall) debounced();
-    });
+    }.bind(this));
 
   }
 
