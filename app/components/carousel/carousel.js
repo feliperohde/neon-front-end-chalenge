@@ -45,7 +45,7 @@ export default class Carousel {
 
   goTo(item) {
 
-    if(this.$(this.options.carouselItem)[item]){
+    if(this.$(this.options.carouselItem)[item]) {
 
       this.setCurrent(item);
 
@@ -62,7 +62,7 @@ export default class Carousel {
 
         setTimeout(function() {
           this.$(this.options.carousel)[0].classList.remove('apply-blur');
-        }.bind(this), 100);
+        }.bind(this), 300);
 
       }.bind(this));
 
@@ -91,12 +91,11 @@ export default class Carousel {
   snap() {
 
     let throttled = new Throttle(function() {
-      // if(this.options.blurFilter)
-      //   this.updateBlur();
       this.snapTo = Math.round(this.$(this.options.carousel)[0].scrollLeft / this.itemWidth);
     }.bind(this), 50);
 
-    let debounced = new Debounce(function(){
+    let debounced = new Debounce(function() {
+      console.log("debounced")
       if(!this.hasTouched && !this.isAnimating) {
         setTimeout(function(){
           this.goTo(this.snapTo);
@@ -107,7 +106,7 @@ export default class Carousel {
 
         this.setBlur("0,0");
       }
-    }.bind(this), 700);
+    }.bind(this), 60);
 
     this.$(this.options.carousel)[0].addEventListener('scroll', throttled);
     this.$(this.options.carousel)[0].addEventListener('scroll', debounced);
@@ -122,7 +121,7 @@ export default class Carousel {
 
     this.$(this.options.carousel)[0].addEventListener('touchend', function() {
       this.hasTouched = false;
-      if(self.endCall) debounced();
+      if(this.endCall) debounced();
     }.bind(this));
 
   }
