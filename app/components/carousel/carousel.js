@@ -31,6 +31,9 @@ export default class Carousel {
     if(options.blurFilter) {
       this.options.blurFilter = this.$(this.options.blurFilter)[0];
       this.lastPos = 0;
+
+      this.$(this.options.carousel)[0].classList.add('apply-blur');
+
       this.updateBlur();
     }
 
@@ -50,21 +53,12 @@ export default class Carousel {
 
       this.setCurrent(item);
 
-      if(this.options.blurFilter) {
-        this.$(this.options.carousel)[0].classList.add('apply-blur');
-      }
-
       let element = this.$(this.options.carousel)[0];
       let scroll = item * this.itemWidth + (parseInt(this.itensMarginLeft,10) * item);
 
       this.isAnimating = true;
       this.scrollTo(element, scroll, this.options.transitionTime, function(){
         this.isAnimating =  false;
-
-        setTimeout(function() {
-          this.$(this.options.carousel)[0].classList.remove('apply-blur');
-        }.bind(this), 300);
-
       }.bind(this));
 
     }
