@@ -12,7 +12,8 @@ export default class Carousel {
       carousel: ".carousel",
       carouselItem: ".carousel__item",
       carouselControl: ".carouselControl__item",
-      currentClass: "is-current"
+      currentClass: "is-current",
+      transitionTime: 500
     }
 
     this.options = {...defaults, ...options};
@@ -57,7 +58,7 @@ export default class Carousel {
       let scroll = item * this.itemWidth + (parseInt(this.itensMarginLeft,10) * item);
 
       this.isAnimating = true;
-      this.scrollTo(element, scroll, 300, function(){
+      this.scrollTo(element, scroll, this.options.transitionTime, function(){
         this.isAnimating =  false;
 
         setTimeout(function() {
@@ -133,7 +134,7 @@ export default class Carousel {
 
   updateBlur() {
     var pos = this.getPos();
-    var limit = 20;
+    var limit = 40;
     var dx = Math.min(limit, Math.abs(pos - this.lastPos) * 0.5);
     // var dy = Math.min(limit, 0);
     this.setBlur(dx + "," + 0);

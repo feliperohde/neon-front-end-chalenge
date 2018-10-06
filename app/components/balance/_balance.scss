@@ -14,7 +14,7 @@ $scrollHeigth: remify(15px);
 .balance__header {
   text-align: center;
 
-  height: remify($headerHeight);
+  height: $headerHeight;
 
   //balance__year helper
   > .wrapper {
