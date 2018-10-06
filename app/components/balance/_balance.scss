@@ -132,6 +132,6 @@ $scrollHeigth: remify(15px);
 
 @keyframes robot {
     0% { background-color: $c-neonBrightGreen; }
-    0% { background-color: $c-yellow; }
+    50% { background-color: $c-yellow; }
     100% { background-color: $c-alienGreen; }
 }

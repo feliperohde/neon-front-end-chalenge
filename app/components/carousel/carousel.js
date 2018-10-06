@@ -95,7 +95,6 @@ export default class Carousel {
     }.bind(this), 50);
 
     let debounced = new Debounce(function() {
-      console.log("debounced")
       if(!this.hasTouched && !this.isAnimating) {
         setTimeout(function(){
           this.goTo(this.snapTo);
@@ -103,8 +102,6 @@ export default class Carousel {
         this.endCall = false;
       } else {
         this.endCall = true;
-
-        this.setBlur("0,0");
       }
     }.bind(this), 60);
 
@@ -137,12 +134,12 @@ export default class Carousel {
   updateBlur() {
     var pos = this.getPos();
     var limit = 20;
-    var dx = Math.min(limit, Math.abs(this.lastPos - pos) * 0.5);
+    var dx = Math.min(limit, Math.abs(pos - this.lastPos) * 0.5);
     // var dy = Math.min(limit, 0);
     this.setBlur(dx + "," + 0);
 
     this.lastPos = pos;
-    // requestAnimationFrame(this.updateBlur());
+    requestAnimationFrame(this.updateBlur.bind(this));
   }
 
   //t = current time
@@ -151,8 +148,11 @@ export default class Carousel {
   //d = duration
   //https://easings.net/
   //https://github.com/danro/jquery-easing/blob/master/jquery.easing.js
-  easeInOutCubic(t, b, c, d) {
-    return c*((t=t/d-1)*t*t + 1) + b;
+  easeInOutExpo(t, b, c, d) {
+    if (t==0) return b;
+    if (t==d) return b+c;
+    if ((t/=d/2) < 1) return c/2 * Math.pow(2, 10 * (t - 1)) + b;
+    return c/2 * (-Math.pow(2, -10 * --t) + 2) + b;
   }
 
   scrollTo(element, to, duration, callback) {
@@ -163,12 +163,10 @@ export default class Carousel {
 
     var animateScroll = function(){
         currentTime += increment;
-        var val = this.easeInOutCubic(currentTime, start, change, duration);
+        var val = this.easeInOutExpo(currentTime, start, change, duration);
         element.scrollLeft = val;
         if(currentTime < duration) {
             setTimeout(animateScroll, increment);
-            if(this.options.blurFilter)
-              this.updateBlur();
         } else {
           callback();
         }
