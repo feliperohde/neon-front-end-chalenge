@@ -65,6 +65,21 @@ $scrollHeigth: remify(15px);
 
     animation: robot 3s linear infinite alternate;
   }
+
+  &:before {
+    @extend .pseudo;
+    position: absolute;
+    z-index: 5;
+    bottom: 0;
+    left: 50%;
+
+    height: 1px;
+    width: 20px;
+
+    background-color: white;
+
+    animation: robotMouth 1.5s linear infinite alternate;
+  }
 }
 
 .header__welcome {
@@ -115,4 +130,10 @@ $scrollHeigth: remify(15px);
     0% { background-color: $c-neonBrightGreen; }
     50% { background-color: $c-yellow; box-shadow: 0 0 4px white }
     100% { background-color: $c-alienGreen; }
+}
+
+@keyframes robotMouth {
+    0% { left: 0; }
+    50% { box-shadow: 0 0 2px 0px white; }
+    100% { left: 100%; }
 }
