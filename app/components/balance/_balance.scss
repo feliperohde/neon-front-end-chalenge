@@ -91,25 +91,6 @@ $scrollHeigth: remify(15px);
 
 .balance__content {
   height: 100%;
-
-  &:before,
-  &:after {
-    @extend .pseudo;
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    bottom: 0;
-
-    box-shadow: 0 0 10px 2px $c-neonDarkBlue;
-  }
-
-  &:before {
-    left: 0;
-  }
-
-  &:after {
-    right: 0;
-  }
 }
 
 .balance__carousel {}

@@ -128,7 +128,7 @@ export default class Carousel {
 
   updateBlur() {
     var pos = this.getPos();
-    var limit = 40;
+    var limit = 6;
     var dx = Math.min(limit, Math.abs(pos - this.lastPos) * 0.5);
     // var dy = Math.min(limit, 0);
     this.setBlur(dx + "," + 0);
@@ -154,7 +154,7 @@ export default class Carousel {
     var start = element.scrollLeft,
         change = to - start,
         currentTime = 0,
-        increment = 20;
+        increment = 5;
 
     var animateScroll = function(){
         currentTime += increment;
