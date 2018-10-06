@@ -63,7 +63,7 @@ $scrollHeigth: remify(15px);
     height: 1px;
     background-color: $c-neonBrightGreen;
 
-    animation: robot 2s linear infinite alternate;
+    animation: robot 3s linear infinite alternate;
   }
 }
 
@@ -113,6 +113,6 @@ $scrollHeigth: remify(15px);
 
 @keyframes robot {
     0% { background-color: $c-neonBrightGreen; }
-    50% { background-color: $c-yellow; }
+    50% { background-color: $c-yellow; box-shadow: 0 0 4px white }
     100% { background-color: $c-alienGreen; }
 }
